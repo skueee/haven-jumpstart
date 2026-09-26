@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bbgga1xgqbr86" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="Script" uid="uid://5debcl6mbdih" path="res://player.gd" id="1_feb5d"]
-[ext_resource type="Texture2D" uid="uid://b8863bif5sou8" path="res://icon.svg" id="2_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://cfncq65roi0iq" path="res://character.png" id="3_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://cqu60pgcf8tvo" path="res://blocks.png" id="3_feb5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_potab"]
-size = Vector2(76, 128)
+size = Vector2(45.000042, 150)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc0e3"]
 texture = ExtResource("3_feb5d")
@@ -60,10 +60,12 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_feb5d")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=116105150]
-scale = Vector2(0.59375, 1)
-texture = ExtResource("2_fc0e3")
+scale = Vector2(3, 3)
+texture = ExtResource("3_fc0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1632621121]
+position = Vector2(2.4999695, 0)
+scale = Vector2(0.99999905, 0.99999905)
 shape = SubResource("RectangleShape2D_potab")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1481822414]
