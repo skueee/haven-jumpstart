@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://5debcl6mbdih" path="res://player.gd" id="1_feb5d"]
 [ext_resource type="Texture2D" uid="uid://cfncq65roi0iq" path="res://character.png" id="3_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://cqu60pgcf8tvo" path="res://blocks.png" id="3_feb5d"]
+[ext_resource type="FontFile" uid="uid://f78gd2p4pgm4" path="res://augiepixel.ttf" id="5_7jktm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_potab"]
 size = Vector2(45.000042, 150)
@@ -50,6 +51,12 @@ b = Vector2(2206, -19)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jjxn8"]
 b = Vector2(768, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjfn4"]
+font = ExtResource("5_7jktm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_potab"]
+font = ExtResource("5_7jktm")
 
 [node name="Game" type="Node" unique_id=1945900733]
 script = ExtResource("1_fc0e3")
@@ -106,6 +113,22 @@ shape = SubResource("SegmentShape2D_kantj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Won" unique_id=1144667496]
 position = Vector2(2681, 545)
 shape = SubResource("SegmentShape2D_jjxn8")
+
+[node name="Label" type="Label" parent="." unique_id=1517645836]
+offset_left = 137.0
+offset_top = 215.0
+offset_right = 224.0
+offset_bottom = 238.0
+text = "Press SHIFT !"
+label_settings = SubResource("LabelSettings_mjfn4")
+
+[node name="Label2" type="Label" parent="." unique_id=1051310905]
+offset_left = 2681.0
+offset_top = 385.0
+offset_right = 2721.0
+offset_bottom = 408.0
+text = "Jump !"
+label_settings = SubResource("LabelSettings_potab")
 
 [connection signal="body_entered" from="WorldBorder" to="." method="_on_world_border_body_entered"]
 [connection signal="body_entered" from="Won" to="." method="_on_won_body_entered"]
