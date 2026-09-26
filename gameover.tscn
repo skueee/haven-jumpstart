@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://rdapanfx85c1"]
+
+[ext_resource type="FontFile" uid="uid://f78gd2p4pgm4" path="res://augiepixel.ttf" id="1_4nh4k"]
+[ext_resource type="Script" uid="uid://c57iaj7g7x075" path="res://gameover.gd" id="1_tpdqf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjfn4"]
+font = ExtResource("1_4nh4k")
+font_size = 39
+
+[sub_resource type="Theme" id="Theme_3fb6l"]
+Button/font_sizes/font_size = 22
+Button/fonts/font = ExtResource("1_4nh4k")
+
+[node name="gameover" type="Control" unique_id=1882904728]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tpdqf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1843470132]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1468682700]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=604023462]
+layout_mode = 2
+text = "Game Over !"
+label_settings = SubResource("LabelSettings_mjfn4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=132108763]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_3fb6l")
+
+[node name="Restart" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1342466224]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=979646046]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
